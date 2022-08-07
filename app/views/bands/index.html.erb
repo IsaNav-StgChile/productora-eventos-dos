@@ -22,9 +22,9 @@
         <td><%= band.name %></td>
         <td><%= band.members %></td>
         <td><%= band.first_show %></td>
-        <td><%= band.band_type %></td>
+        <td><%= band.band_type.humanize %></td>
         <td><%= band.concerts.size %></td>
-        <td><%= band.concerts.map {|concert| concert.assistants } .sum %></td>
+        <td><%= band.all_assistants %></td>
         <td><%= link_to 'Show', band %></td>
         <td><%= link_to 'Edit', edit_band_path(band) %></td>
         <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
